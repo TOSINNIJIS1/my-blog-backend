@@ -80,4 +80,6 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname + '/build/index.html'))
 })
 
-app.listen(9000, () => console.log('Listening on port 9000!'))
+let PORT = process.env.PORT || 1000
+
+app.listen(PORT, () => console.log('Listening on port 1000!'))
