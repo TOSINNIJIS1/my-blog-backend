@@ -2,10 +2,11 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { MongoClient } from 'mongodb';
 import path from 'path';
-
+import Cors from 'cors'
 
 
 const app = express();
+app.use(Cors());
 app.use(express.static(path.join(__dirname, '/build/')))
 // it parses the json object we've included along with our post request
 // then add a body property to the request parameter of whatever the route is.
