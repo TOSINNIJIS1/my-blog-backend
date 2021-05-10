@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { MongoClient } from 'mongodb';
-import path from 'path'
+import path from 'path';
 
 
 
@@ -13,12 +13,12 @@ app.use(bodyParser.json());
 
 const withdb = async (operations, res) => {
     try {
-        const client = await MongoClient.connect('mongodb://localhost:27017', { 
+        const client = await MongoClient.connect('mongodb+srv://dbMyBlog:MyDataBase@cluster0.iuebv.mongodb.net/Data', { 
             useNewUrlParser: true,
             useUnifiedTopology: true 
         })
 
-        const db = client.db('my-linkedin-fullstack-page')
+        const db = client.db('my-blog')
 
         await operations(db);
 
